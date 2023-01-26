@@ -41,3 +41,19 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+$(save).on("click", function (event) {
+  var day = $(info).val().trim();
+  localStorage.setItem ("past");
+});
+
+$(save).on("click", function (event) {
+  var day = $(info).val().trim();
+  localStorage.setItem ("now");
+});
+
+$(save).on("click", function (event) {
+  var day = $(info).val().trim();
+  localStorage.setItem ("future");
+});
+
