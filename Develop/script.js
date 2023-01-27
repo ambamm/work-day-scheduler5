@@ -1,15 +1,29 @@
+//get variables set up
+
 var past = $('#past');
 var now =  $('#present');
 var future =  $('#future');
 var day = $('#currentDay');
-var save = $('.save-Btn')
-var info= $('#textInfo')
+var save = $('.save-Btn');
+var info= $('#textInfo');
+var nine =$('#hour-9');
+var ten =$('#hour-10');
+var elev =$('#hour-11');
+var twelv =$('#hour-12');
+var thirt =$('#hour-13');
+var four =$('#hour-14');
+var fift =$('#hour-15');
+var sixt =$('#hour-16');
+var sevt =$('#hour-17');
+
+
 var texMes = [];
 
 
 
 
 
+//setting time stamp
 const currentDay = dayjs().format(' YYYY-MM-DDHH: mm:ssZ[Z]');
 $("#currentDay").text(currentDay);
 console.log(currentDay);
@@ -18,30 +32,7 @@ console.log(currentDay);
 
 
  
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-$(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
-});
-
+$(function workDay() {
 $(save).on("click", function (event) {
   var day = $(info).val().trim();
   localStorage.setItem ("past");
@@ -57,3 +48,7 @@ $(save).on("click", function (event) {
   localStorage.setItem ("future");
 });
 
+
+});
+
+workDay();
